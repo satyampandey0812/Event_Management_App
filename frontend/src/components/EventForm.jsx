@@ -29,15 +29,20 @@ export default function EventForm() {
         const startISO = toUTCISO(startDate, startTime, timezone);
         const endISO = toUTCISO(endDate, endTime, timezone);
 
+        if (new Date(endISO) <= new Date(startISO)) {
+            alert("End date/time must be after start date/time.");
+            return;
+        }
+
         dispatch(
-  createEvent({
-    profiles: selectedProfiles,
-    timezone,
-    startISO,
-    endISO,
-    description           // ✅ send text to backend
-  })
-);
+            createEvent({
+                profiles: selectedProfiles,
+                timezone,
+                startISO,
+                endISO,
+                description           // ✅ send text to backend
+            })
+        );
         setSelectedProfiles([]);
         setStartDate("");
         setEndDate("");
