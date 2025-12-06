@@ -30,13 +30,13 @@ export default function App() {
 
 
       <div className="layout">
-        {/* Left: profiles + event form */}
+       
         <aside className="left-panel">
           <ProfileForm />
           <EventForm />
         </aside>
 
-        {/* Right: event list */}
+        
         <section className="right-panel">
           <div className="topbar">
             <select

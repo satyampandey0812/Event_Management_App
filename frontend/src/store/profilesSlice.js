@@ -45,7 +45,7 @@ const profilesSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(createProfile.fulfilled, (state, action) => {
-        // push new profile to list
+        
         state.list.push(action.payload);
       });
   }

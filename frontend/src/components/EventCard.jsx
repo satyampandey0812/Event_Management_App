@@ -1,4 +1,3 @@
-// src/components/EventCard.jsx
 import { formatInTZ } from "../utils/time";
 
 export default function EventCard({ event, viewTimezone, onEdit, onViewLogs }) {
@@ -15,7 +14,7 @@ const shortDesc =
 
   return (
     <div className="card">
-      {/* top row: profiles + tz chip */}
+      
       <div className="event-header-row">
         <div>
           <div className="event-title">
@@ -30,7 +29,7 @@ const shortDesc =
         </span>
       </div>
 
-      {/* times */}
+   
       {shortDesc && (
   <div
     style={{
@@ -61,7 +60,7 @@ const shortDesc =
         </div>
       </div>
 
-      {/* created / updated */}
+     
       <div style={{ fontSize: 11, color: "#6b7280", marginTop: 6 }}>
         <div>
           Created: {formatInTZ(event.createdAtUTC, viewTimezone)}
@@ -71,7 +70,7 @@ const shortDesc =
         </div>
       </div>
 
-      {/* actions */}
+     
       <div
         style={{
           display: "flex",

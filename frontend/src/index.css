@@ -1,4 +1,4 @@
-/* ==== RESET & BASE ==== */
+
 *,
 *::before,
 *::after {
@@ -20,7 +20,7 @@ body {
   color: #0f172a;
 }
 
-/* ==== LAYOUT ==== */
+
 .container {
   max-width: 1120px;
   margin: 0 auto;
@@ -49,14 +49,14 @@ body {
   color: #4338ca;
 }
 
-/* main grid */
+
 .layout {
   display: grid;
   grid-template-columns: 340px minmax(0, 1fr);
   gap: 20px;
 }
 
-/* panels */
+
 .left-panel,
 .right-panel {
   background: rgba(255, 255, 255, 0.95);
@@ -67,7 +67,7 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
-/* ==== FORMS & CARDS ==== */
+
 .card {
   background: #f9fafb;
   border-radius: 14px;
@@ -82,7 +82,7 @@ body {
   font-weight: 600;
 }
 
-/* fields */
+
 .field {
   margin-bottom: 10px;
 }
@@ -124,7 +124,7 @@ input[type="checkbox"] {
   accent-color: #4f46e5;
 }
 
-/* ==== TOPBAR (RIGHT PANEL) ==== */
+
 .topbar {
   display: flex;
   gap: 10px;
@@ -136,7 +136,7 @@ input[type="checkbox"] {
   flex: 1;
 }
 
-/* ==== BUTTONS ==== */
+
 button {
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: #ffffff;
@@ -173,7 +173,7 @@ button.secondary:hover {
   background: #d1d5db;
 }
 
-/* ==== EVENT CARD TAGS ==== */
+
 .event-header-row {
   display: flex;
   justify-content: space-between;
@@ -202,7 +202,7 @@ button.secondary:hover {
   margin-top: 4px;
 }
 
-/* ==== MODALS ==== */
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -225,7 +225,7 @@ button.secondary:hover {
   border: 1px solid rgba(148, 163, 184, 0.4);
 }
 
-/* ==== RESPONSIVE ==== */
+
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;

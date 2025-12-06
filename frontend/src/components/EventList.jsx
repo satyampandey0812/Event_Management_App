@@ -1,4 +1,3 @@
-// src/components/EventList.jsx
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import EventCard from "./EventCard";

@@ -1,9 +1,9 @@
-// src/components/EditEventModal.jsx
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateEvent } from "../store/eventsSlice";
 import { toUTCISO } from "../utils/time";
-import dayjs from "../utils/time"; // default export from time.js
+import dayjs from "../utils/time"; 
 
 export default function EditEventModal({ open, event, onClose }) {
     const dispatch = useDispatch();
@@ -17,17 +17,17 @@ export default function EditEventModal({ open, event, onClose }) {
     const [endTime, setEndTime] = useState("10:00");
     const [description, setDescription] = useState("");
 
-    // Fill form whenever we open the modal with a new event
+    
     useEffect(() => {
         if (!event) return;
 
-        // profiles
+     
         setSelectedProfiles(event.profiles?.map((p) => p._id || p) || []);
 
-        // timezone
+   
         setTimezone(event.timezone || "UTC");
 
-        // convert stored UTC times into event.timezone for the inputs
+        
         if (event.startUTC) {
             const start = dayjs.utc(event.startUTC).tz(event.timezone || "UTC");
             setStartDate(start.format("YYYY-MM-DD"));
@@ -42,7 +42,7 @@ export default function EditEventModal({ open, event, onClose }) {
         setDescription(event.description || "");
     }, [event]);
 
-    if (!open || !event) return null; // 👈 ensure we *do* have an event
+    if (!open || !event) return null; 
 
     const toggleProfile = (id) => {
         setSelectedProfiles((prev) =>
@@ -116,7 +116,7 @@ export default function EditEventModal({ open, event, onClose }) {
                 </div>
 
                 <form onSubmit={handleSubmit}>
-                    {/* Profiles */}
+                   
                     <div className="field">
                         <label>Profiles</label>
                         <div
@@ -144,7 +144,7 @@ export default function EditEventModal({ open, event, onClose }) {
                         </div>
                     </div>
 
-                    {/* Timezone */}
+                    
                     <div className="field">
                         <label>Timezone</label>
                         <select
@@ -174,7 +174,7 @@ export default function EditEventModal({ open, event, onClose }) {
                     </div>
 
 
-                    {/* Start */}
+                    
                     <div className="field">
                         <label>Start Date &amp; Time</label>
                         <div style={{ display: "flex", gap: 8 }}>
@@ -191,7 +191,7 @@ export default function EditEventModal({ open, event, onClose }) {
                         </div>
                     </div>
 
-                    {/* End */}
+                    
                     <div className="field">
                         <label>End Date &amp; Time</label>
                         <div style={{ display: "flex", gap: 8 }}>

@@ -100,16 +100,16 @@ export default function EventLogsModal({ open, event, onClose }) {
   );
 }
 
-// helper to format different kinds of values nicely
+
 function prettyValue(field, raw, tz) {
   if (!raw && raw !== 0) return "-";
 
-  // dates
+
   if (field === "startUTC" || field === "endUTC" || field === "createdAtUTC") {
     return formatInTZ(raw, tz);
   }
 
-  // profiles array
+ 
   if (field === "profiles") {
     if (!Array.isArray(raw)) return String(raw);
     return raw

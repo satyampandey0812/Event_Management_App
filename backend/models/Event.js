@@ -10,7 +10,7 @@ const eventUpdateLogSchema = new mongoose.Schema(
 
 const eventSchema = new mongoose.Schema({
   profiles: [{ type: mongoose.Schema.Types.ObjectId, ref: "Profile" }],
-  timezone: { type: String, required: true }, // e.g. "Asia/Kolkata"
+  timezone: { type: String, required: true },
   startUTC: { type: Date, required: true },
   endUTC: { type: Date, required: true },
   createdAtUTC: { type: Date, default: Date.now },

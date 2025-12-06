@@ -5,11 +5,11 @@ import { createProfile } from "../store/profilesSlice";
 export default function ProfileForm() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
-  const [timezone, setTimezone] = useState("Asia/Kolkata"); // default IST
+  const [timezone, setTimezone] = useState("Asia/Kolkata"); 
 
  const handleSubmit = async (e) => {
   e.preventDefault();
-  console.log("Submitting profile:", name, timezone); // DEBUG
+  console.log("Submitting profile:", name, timezone); 
 
   if (!name.trim()) return;
 
@@ -20,7 +20,7 @@ export default function ProfileForm() {
     })
   );
 
-  console.log("Profile create result:", result); // DEBUG
+  console.log("Profile create result:", result); 
 
   setName("");
 };

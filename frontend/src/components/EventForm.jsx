@@ -40,7 +40,7 @@ export default function EventForm() {
                 timezone,
                 startISO,
                 endISO,
-                description           // ✅ send text to backend
+                description          
             })
         );
         setSelectedProfiles([]);
