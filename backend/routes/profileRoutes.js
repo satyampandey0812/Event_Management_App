@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Profile = require("../models/profile");
+const Profile = require("../models/Profile");
 
 // POST /api/profiles 
 router.post("/", async (req, res) => {
