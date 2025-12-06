@@ -1,0 +1,236 @@
+/* ==== RESET & BASE ==== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #eef2ff, #f9fafb 45%, #e0f2fe);
+  color: #0f172a;
+}
+
+/* ==== LAYOUT ==== */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  color: #4f46e5;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  background: rgba(79, 70, 229, 0.08);
+  color: #4338ca;
+}
+
+/* main grid */
+.layout {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 20px;
+}
+
+/* panels */
+.left-panel,
+.right-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 18px 18px 20px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* ==== FORMS & CARDS ==== */
+.card {
+  background: #f9fafb;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 14px 14px 16px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* fields */
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+  width: 100%;
+  padding: 6px 9px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.45);
+  transform: translateY(-0.5px);
+}
+
+input[type="checkbox"] {
+  accent-color: #4f46e5;
+}
+
+/* ==== TOPBAR (RIGHT PANEL) ==== */
+.topbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.dropdown {
+  flex: 1;
+}
+
+/* ==== BUTTONS ==== */
+button {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 7px 15px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 10px 25px rgba(55, 48, 163, 0.28);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.1s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(55, 48, 163, 0.32);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(55, 48, 163, 0.25);
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #111827;
+  box-shadow: none;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}
+
+/* ==== EVENT CARD TAGS ==== */
+.event-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.event-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.event-chip {
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  background: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid rgba(129, 140, 248, 0.45);
+}
+
+.event-meta {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* ==== MODALS ==== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  min-width: 380px;
+  max-width: 520px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+.left-panel > .card + .card {
+  margin-top: 10px;
+}
